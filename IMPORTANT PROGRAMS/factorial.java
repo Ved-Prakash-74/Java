@@ -1,18 +1,33 @@
 import java.util.*;
+
 public class factorial 
 {
-    public static void main(String[] args)
+    public static void main(String args[]) 
     {
-        int n , fact = 1;
-        Scanner sc = new Scanner(System.in);
-        System.out.println("\nEnter a number");
-        n = sc.nextInt();
-        sc.close();
-
-        for(int i = n ; i >= 1 ; i--)
+        int fact = 1, i;
+        try (Scanner sc = new Scanner(System.in)) 
         {
-            fact = fact * i;
+            System.out.print("\nEnter a number: ");
+            int num = sc.nextInt();
+            System.out.println("\nSeries is: ");
+            for (i = num; i != 0; i--) 
+            {
+                if (i == 1) 
+                {
+                    System.out.print(i);
+                    break;
+                } 
+                else 
+                {
+                    System.out.print(i + " * ");
+                }
+
+            }
+            for (i = 1; i <= num; i++) 
+            {
+                fact = fact * i;
+            }
+            System.out.println("\n\nFactorial of " + num + " is " + fact);
         }
-        System.out.println("Factorial of " + n + " is " + fact);
     }
 }
